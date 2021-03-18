@@ -31,20 +31,6 @@ def piramide():
     glEnd()
 
     #LATERAL
-    # glBegin(GL_QUAD_STRIP)
-    # for i in range(0,N):
-    #     x = raio1 * math.cos(i*angulo)
-    #     y = raio1 * math.sin(i*angulo)
-    #     pontosBase += [ (x,y) ]
-    #     glColor3fv(cores[(i+1)%len(cores)])
-    #     glVertex3f(pontosBase[i][0],pontosBase[i][1],H)
-    #     glVertex3f(pontosBase[(i+1)%N][0],pontosBase[(i+1)%N][1],H)
-    #     glVertex3f(pontosBase[i][0],pontosBase[i][1],0.0)
-    #     glVertex3f(pontosBase[(i+1)%N][0],pontosBase[(i+1)%N][1],0.0)
-    # glEnd()
-
-
-    #LATERAL
     glBegin(GL_QUAD_STRIP)
     for i in range(0,N+1):
         x = math.cos(i*angulo)
@@ -54,6 +40,7 @@ def piramide():
         glVertex3f(raio1*0.5*x,raio1*0.5*y,H)
     glEnd()
 
+    #BASE MENOR
     glBegin(GL_POLYGON)
     for i in range(0,N):
         x = raio1*0.5 * math.cos(i*angulo)
