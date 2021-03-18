@@ -7,13 +7,12 @@ a = 0
 
 cores = ( (1,0,0),(1,1,0),(0,1,0),(0,1,1),(0,0,1),(1,0,1),(0.5,1,1),(1,0,0.5) )
 
-def tronco():
+def piramide():
     raio1 = 2
     raio2 = 1
-    N = 6
+    N = 5
     H = 4
-    pontosBase1 = []
-    pontosBase2 = []
+    pontosBase = []
     angulo = (2*math.pi)/N
 
     glPushMatrix()
@@ -27,28 +26,39 @@ def tronco():
     for i in range(0,N):
         x = raio1 * math.cos(i*angulo)
         y = raio1 * math.sin(i*angulo)
-        pontosBase1 += [ (x,y) ]
+        pontosBase += [ (x,y) ]
         glVertex3f(x,y,0.0)
     glEnd()
 
     #LATERAL
+    # glBegin(GL_QUAD_STRIP)
+    # for i in range(0,N):
+    #     x = raio1 * math.cos(i*angulo)
+    #     y = raio1 * math.sin(i*angulo)
+    #     pontosBase += [ (x,y) ]
+    #     glColor3fv(cores[(i+1)%len(cores)])
+    #     glVertex3f(pontosBase[i][0],pontosBase[i][1],H)
+    #     glVertex3f(pontosBase[(i+1)%N][0],pontosBase[(i+1)%N][1],H)
+    #     glVertex3f(pontosBase[i][0],pontosBase[i][1],0.0)
+    #     glVertex3f(pontosBase[(i+1)%N][0],pontosBase[(i+1)%N][1],0.0)
+    # glEnd()
+
+
+    #LATERAL
     glBegin(GL_QUAD_STRIP)
-    for i in range(0,N):
-        x = raio1 * math.cos(i*angulo)
-        y = raio1 * math.sin(i*angulo)
-        pontosBase1 += [ (x,y) ]
+    for i in range(0,N+1):
+        x = math.cos(i*angulo)
+        y = math.sin(i*angulo)
         glColor3fv(cores[(i+1)%len(cores)])
-        glVertex3f(pontosBase1[i][0],pontosBase1[i][1],H/2)
-        glVertex3f(pontosBase1[(i+1)%N][0],pontosBase1[(i+1)%N][1],H/2)
-        glVertex3f(pontosBase1[i][0],pontosBase1[i][1],0.0)
-        glVertex3f(pontosBase1[(i+1)%N][0],pontosBase1[(i+1)%N][1],0.0)
+        glVertex3f(raio1*x,raio1*y,0.0)
+        glVertex3f(raio1*0.5*x,raio1*0.5*y,H)
     glEnd()
 
     glBegin(GL_POLYGON)
     for i in range(0,N):
-        x = raio2 * math.cos(i*angulo)
-        y = raio2 * math.sin(i*angulo)
-        pontosBase1 += [ (x,y) ]
+        x = raio1*0.5 * math.cos(i*angulo)
+        y = raio1*0.5 * math.sin(i*angulo)
+        pontosBase += [ (x,y) ]
         glVertex3f(x,y,H)
     glEnd()
 
@@ -56,7 +66,7 @@ def tronco():
 def desenha():
     global a
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    tronco()
+    piramide()
     a+=1
     glutSwapBuffers()
   
