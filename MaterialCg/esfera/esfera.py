@@ -8,13 +8,13 @@ n2 = 50
 r = 2
 
 
-def f(x,y):
-    return x**2-y**2
+# def f(x,y):
+#     return x**2-y**2
 
-M, N = 100, 100
-x0, y0 = -2, -2
-xf, yf = 2, 2
-dx, dy = (xf - x0)/M, (yf - y0)/N
+# M, N = 100, 100
+# x0, y0 = -2, -2
+# xf, yf = 2, 2
+# dx, dy = (xf - x0)/M, (yf - y0)/N
 a = 0
 
 def f1(i,j):
@@ -41,7 +41,6 @@ def mesh():
 
     glEnd()
     glPopMatrix()
-
 
 
 

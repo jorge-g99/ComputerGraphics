@@ -116,9 +116,9 @@ def DrawGLScene():
     
     glEnd()                           # Done Drawing The Cube
     
-    xrot = xrot + 0.2                 # X rotation
-    yrot = yrot + 0.2                 # Y rotation
-    zrot = zrot + 0.2                 # Z rotation
+    xrot = xrot + 0.3                 # X rotation
+    yrot = yrot + 0.3                 # Y rotation
+    zrot = zrot + 0.3                 # Z rotation
 
     glutSwapBuffers()
 
