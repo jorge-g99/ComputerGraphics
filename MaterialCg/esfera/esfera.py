@@ -7,14 +7,6 @@ n1 = 50
 n2 = 50
 r = 2
 
-
-# def f(x,y):
-#     return x**2-y**2
-
-# M, N = 100, 100
-# x0, y0 = -2, -2
-# xf, yf = 2, 2
-# dx, dy = (xf - x0)/M, (yf - y0)/N
 a = 0
 
 def f1(i,j):
@@ -69,12 +61,3 @@ glTranslatef(0.0,0.0,-10)
 glutTimerFunc(10,timer,1)
 glutMainLoop()
 
-
-
-
-"""
- phi = 2*math.pi*j/(n2-1)
-            x = r*math.cos(theta)*math.cos(phi)
-            y = r*math.sin(theta)
-            z = r*math.cos(theta)*math.sin(phi)
-            """

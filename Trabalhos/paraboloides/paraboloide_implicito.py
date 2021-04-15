@@ -15,7 +15,7 @@ def f1(i,j):
     x = r*math.cos(theta)*math.cos(phi)
     y = r*math.sin(theta)
     z = r*math.cos(theta)*math.sin(phi)
-    return x,y**2,z
+    return x,y,z
 
 def mesh():
     glPushMatrix()
