@@ -41,7 +41,7 @@ def LoadTextures():
     texture = glGenTextures(2) # Gera 2 IDs para as texturas
 
     ################################################################################
-    reader = png.Reader(filename='mapa2.png')
+    reader = png.Reader(filename='mapa.png')
     w, h, pixels, metadata = reader.read_flat()
     if(metadata['alpha']):
         modo = GL_RGBA
